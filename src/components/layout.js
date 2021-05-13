@@ -6,7 +6,6 @@
  */
 
 import * as React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
@@ -28,9 +27,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <ContentWrapper>
-        <main>{children}</main>
-      </ContentWrapper>
+      <Main>
+        <ContentWrapper>{children}</ContentWrapper>
+      </Main>
       <Footer>
         <ContentWrapper>
           © {new Date().getFullYear()}, Built with
@@ -42,8 +41,10 @@ const Layout = ({ children }) => {
   )
 }
 
+const Main = styled.main`
+  padding-bottom: 8rem;
+`
 const Footer = styled.footer`
-  position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
@@ -53,6 +54,10 @@ const Footer = styled.footer`
 
   a {
     color: white;
+  }
+
+  @media (min-width: 48em) {
+    position: fixed;
   }
 `
 

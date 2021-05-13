@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import TeamMembers from "../components/TeamMembers"
-import { PageTitle } from "../components/styled/global"
+import { ContentWrapper, PageTitle } from "../components/styled/global"
 
 export const pageQuery = graphql`
   query TeamMembers {
@@ -41,8 +41,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Home" />
-      <PageTitle>Our Innovative Team</PageTitle>
-      <TeamMembers teamMembers={teamMembers} />
+      <ContentWrapper>
+        <PageTitle>Our Innovative Team</PageTitle>
+
+        <TeamMembers teamMembers={teamMembers} />
+      </ContentWrapper>
     </Layout>
   )
 }

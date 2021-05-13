@@ -18,4 +18,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Open Sans";
     background-image: linear-gradient(20deg, #b721ff 0%, #21d4fd 100%);    
-    }`
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  `

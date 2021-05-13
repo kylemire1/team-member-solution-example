@@ -7,18 +7,20 @@ const TeamMember = ({ kyleTeamMemberFields, name, slug }) => {
   const { portrait, jobTitle } = kyleTeamMemberFields
   return (
     <BioPageLink to={`/team-members/${slug}`}>
-      <Portrait>
-        <GatsbyImage
-          image={getImage(portrait.localFile)}
-          alt={portrait.altText}
-        />
-      </Portrait>
-      <div>
-        <NameAndTitle>
-          <h2>{name}</h2>
-          <p>{jobTitle}</p>
-        </NameAndTitle>
-      </div>
+      <Inner>
+        <Portrait>
+          <GatsbyImage
+            image={getImage(portrait.localFile)}
+            alt={portrait.altText}
+          />
+        </Portrait>
+        <div>
+          <NameAndTitle>
+            <h2>{name}</h2>
+            <p>{jobTitle}</p>
+          </NameAndTitle>
+        </div>
+      </Inner>
     </BioPageLink>
   )
 }
@@ -26,17 +28,21 @@ const TeamMember = ({ kyleTeamMemberFields, name, slug }) => {
 const portraitOffset = "4.5rem"
 
 const BioPageLink = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   margin-top: ${portraitOffset};
   padding: 2em;
   border-radius: 1rem;
   background-color: white;
-  color: currentColor;
   text-decoration: none;
+  color: currentColor;
+`
+
+const Inner = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 `
 
 const Portrait = styled.div`

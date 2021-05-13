@@ -16,13 +16,10 @@ const TeamMembers = ({ teamMembers }) => {
 
 const TeamMembersWrapper = styled.div`
   display: grid;
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
   align-items: center;
   justify-items: center;
-
-  @media (min-width: 52em) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 `
 
 export default TeamMembers

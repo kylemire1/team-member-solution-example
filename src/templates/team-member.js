@@ -42,7 +42,7 @@ const TeamMemberPage = ({ data }) => {
             />
           </Portrait>
           <h3>{jobTitle}</h3>
-          {parse(bio)}
+          <p>{parse(bio)}</p>
         </ContentBox>
       </ContentWrapper>
     </Layout>
@@ -52,18 +52,40 @@ const TeamMemberPage = ({ data }) => {
 const ContentBox = styled.div`
   position: relative;
   background-color: white;
-  padding: 2em;
+  padding: 4em 2em 2em;
+  margin-top: 3.5rem;
   border-radius: 1rem;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 48em) {
+    padding-top: 3em;
+  }
 `
 
 const Portrait = styled.div`
   position: absolute;
-  top: -3.5rem;
-  right: 2rem;
+  top: -2.75rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
 
   .gatsby-image-wrapper {
     border-radius: 999px;
-    border: solid 5px white;
+    border: solid 3px white;
+    max-width: 100px;
+  }
+
+  @media (min-width: 48em) {
+    justify-content: flex-end;
+    right: 2rem;
+    .gatsby-image-wrapper {
+      border: solid 5px white;
+      max-width: 100%;
+    }
   }
 `
 
