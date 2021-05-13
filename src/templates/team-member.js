@@ -32,19 +32,17 @@ const TeamMemberPage = ({ data }) => {
   const { bio, jobTitle, portrait } = kyleTeamMemberFields
   return (
     <Layout>
-      <ContentWrapper>
-        <PageTitle>{name}</PageTitle>
-        <ContentBox>
-          <Portrait>
-            <GatsbyImage
-              image={getImage(portrait.localFile)}
-              alt={portrait.altText}
-            />
-          </Portrait>
-          <h3>{jobTitle}</h3>
-          <p>{parse(bio)}</p>
-        </ContentBox>
-      </ContentWrapper>
+      <PageTitle>{name}</PageTitle>
+      <ContentBox>
+        <Portrait>
+          <GatsbyImage
+            image={getImage(portrait.localFile)}
+            alt={portrait.altText}
+          />
+        </Portrait>
+        <h3>{jobTitle}</h3>
+        <p>{parse(bio)}</p>
+      </ContentBox>
     </Layout>
   )
 }
@@ -62,6 +60,7 @@ const ContentBox = styled.div`
 
   @media (min-width: 48em) {
     padding-top: 3em;
+    margin-top: 0;
   }
 `
 

@@ -25,11 +25,9 @@ const TeamMember = ({ kyleTeamMemberFields, name, slug }) => {
   )
 }
 
-const portraitOffset = "4.5rem"
-
 const BioPageLink = styled(Link)`
   width: 100%;
-  margin-top: ${portraitOffset};
+  margin-top: 3rem;
   padding: 2em;
   border-radius: 1rem;
   background-color: white;
@@ -46,7 +44,7 @@ const Inner = styled.div`
 `
 
 const Portrait = styled.div`
-  margin-top: -${portraitOffset};
+  margin-top: -4.5rem;
   .gatsby-image-wrapper {
     border: solid 5px white;
     border-radius: 999px;
