@@ -45,6 +45,7 @@ const Inner = styled.div`
 
 const Portrait = styled.div`
   margin-top: -4.5rem;
+
   .gatsby-image-wrapper {
     border: solid 5px white;
     border-radius: 999px;
